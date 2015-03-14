@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="WINDOWS-1252" standalone="no"?>
+<jardesc>
+    <jar path="L:/Documents and Settings/Fabien/Mes documents/Java Workspace/java-dicom-buddy/bin/java-dicom-buddy.jar"/>
+    <options buildIfNeeded="true" compress="false" descriptionLocation="/java-dicom-buddy/description.jardesc" exportErrors="false" exportWarnings="true" includeDirectoryEntries="false" overwrite="false" saveDescription="true" storeRefactorings="false" useSourceFolders="false"/>
+    <storedRefactorings deprecationInfo="true" structuralOnly="false"/>
+    <selectedProjects/>
+    <manifest generateManifest="false" manifestLocation="/java-dicom-buddy/MANIFEST.MF" manifestVersion="1.0" reuseManifest="false" saveManifest="true" usesManifest="true">
+        <sealing sealJar="false">
+            <packagesToSeal/>
+            <packagesToUnSeal/>
+        </sealing>
+    </manifest>
+    <selectedElements exportClassFiles="true" exportJavaFiles="false" exportOutputFolder="false">
+        <file path="/java-dicom-buddy/description.jardesc"/>
+        <file path="/java-dicom-buddy/.classpath"/>
+        <folder path="/java-dicom-buddy/res"/>
+        <file path="/java-dicom-buddy/.project"/>
+        <javaElement handleIdentifier="=java-dicom-buddy/src"/>
+        <file path="/java-dicom-buddy/MANIFEST.MF"/>
+        <folder path="/java-dicom-buddy/lib"/>
+        <file path="/java-dicom-buddy/pom.xml"/>
+    </selectedElements>
+</jardesc>

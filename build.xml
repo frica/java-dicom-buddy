@@ -1,0 +1,64 @@
+<?xml version="1.0"?>
+<project name="java-dicom-buddy" default="dist" basedir=".">
+	<description>
+	    Java-dicom buddy build file
+	</description>
+	
+	<!-- set global properties for this build -->
+	<property name="src" location="src"/>
+	
+	<property name="build" location="build"/>
+	<property name="dist"  location="dist"/>
+
+  	<target name="init" depends="clean">
+	    <!-- Create the time stamp -->
+	    <tstamp/>
+	    <!-- Create the build directory structure used by compile -->
+	    <mkdir dir="${build}"/>
+  		
+  		<property name="res" location="res"/>
+	  	  	
+		<path id="build.classpath">
+			<fileset dir="lib/">
+				<include name="**/*.jar"/>
+			</fileset>
+		</path>  	
+	</target>
+
+	<target name="compile" depends="init"
+		description="Compile the source" >
+		<!-- Compile the java code from ${src} into ${build} -->
+		<javac srcdir="${src}" destdir="${build}">
+			<classpath refid="build.classpath"/>
+		</javac>
+	</target>
+
+	<target name="dist" depends="compile"
+        description="Generate the distribution" >
+		
+    	<!-- Create the distribution directory -->
+		<mkdir dir="${dist}/lib"/>
+  	
+	  	<unjar dest="${build}">
+			<fileset dir="lib/">
+				<include name="**/*.jar"/>
+			</fileset>
+		</unjar>
+	
+		<copy todir="${build}">
+			<fileset dir="${res}"/>
+		</copy>
+		
+    	<!-- Put everything in ${build} into the java-dicom-buddy-${DSTAMP}.jar file -->
+    	<jar jarfile="${dist}/lib/java-dicom-buddy-${DSTAMP}.jar" manifest="META-INF/MANIFEST.MF" basedir="${build}"/>
+
+	</target>
+
+	<target name="clean"
+		description="Clean up: delete build and dist directories" >
+    	<!-- Delete the ${build} and ${dist} directory trees -->
+	    <delete dir="${build}"/>
+	    <delete dir="${dist}"/>
+  	</target>
+	
+</project>
